@@ -1,0 +1,13 @@
+session_name: generic_dev 
+# shell_command_before: conda activate demo 
+windows:
+- focus: 'true'
+  layout: 2878,156x67,0,0{56x67,0,0[56x33,0,0,1,56x33,0,34,3],99x67,57,0,2}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - ls | fzf
+  - git status 
+  - focus: 'true'
+    shell_command: vim "-c '0"
+  window_name: dev
