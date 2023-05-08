@@ -350,7 +350,7 @@ format-muted-underline = ${colors.background}
 inherit = bar/left
 width = 63%
 offset-x = 20%
-monitor = DP-2
+monitor = DP-3
 
 
 [bar/left-mon3]
