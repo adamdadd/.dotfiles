@@ -2,10 +2,10 @@
     "AutoStart": {
         "client": "localhost:6742",
         "custom": "",
-        "enabled": false,
+        "enabled": true,
         "host": "0.0.0.0",
         "port": "6742",
-        "profile": "icy",
+        "profile": "rainbowpuke",
         "setclient": false,
         "setcustom": false,
         "setminimized": false,
@@ -1059,11 +1059,20 @@
             "Z370 AORUS Gaming 5-CF"
         ]
     },
+    "Plugins": {
+        "plugins": [
+            {
+                "description": "Group and organize your devices on a spatial map",
+                "enabled": true,
+                "name": "OpenRGB Visual Map Plugin"
+            }
+        ]
+    },
     "Theme": {
         "theme": "dark"
     },
     "UserInterface": {
-        "RunZoneChecks": false,
+        "RunZoneChecks": true,
         "exit_profile": {
             "profile_name": "icy",
             "set_on_exit": false
