@@ -80,7 +80,7 @@ ZSH_THEME="gruvbox"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(forgit)
 
 [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 
@@ -88,6 +88,11 @@ source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
+#
+
+# Only changing the escape key to `jk` in insert mode, we still
+# keep using the default keybindings `^[` in other modes
+#ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -133,10 +138,11 @@ export DISABLE_AUTO_TITLE='true'
 
 export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --ignore .git/ --nocolor --hidden -g ""'
 
+# Wasmer
+export WASMER_DIR="/home/adam/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Wasmer
-export WASMER_DIR="/home/adam/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
