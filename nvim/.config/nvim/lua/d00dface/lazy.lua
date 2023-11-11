@@ -12,37 +12,45 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    },
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+    --| Telescope
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = { { 'nvim-lua/plenary.nvim' } } },
+    --| Colorscheme
+        --| Gruvbox
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+        --| Tokyo Night
+    { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {}, },
+    --| Treesitter
     { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate' },
     'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-context',
+    --| Plenary
     'nvim-lua/plenary.nvim',
+    --| Harpoon
     'theprimeagen/harpoon',
+    --| UndoTree
     'mbbill/undotree',
+    --| Fugitive
     'tpope/vim-fugitive',
+    --| Commentary
     'tpope/vim-commentary',
+    --| Neorg
     'nvim-neorg/neorg',
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    -- LSP Support
+    --| LSP Zero
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+        --| LSP Support
     {'neovim/nvim-lspconfig'},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
-
-    -- Autocompletion
+        --| Autocompletion
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/cmp-path'},
     {'saadparwaiz1/cmp_luasnip'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/cmp-nvim-lua'},
-
-    -- Snippets
+        --| Snippets
     {'L3MON4D3/LuaSnip'},
     {'rafamadriz/friendly-snippets'},
-
+    --| Trouble
+    { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, },
 })
