@@ -10,6 +10,11 @@ turn_on() {
     sudo bluetoothctl power on
 }
 
+con_q45() {
+    echo "Attempting connection to sony device..."
+    sudo bluetoothctl connect E8:EE:CC:6E:B4:5A
+}
+
 con_sony() {
     echo "Attempting connection to sony device..."
     sudo bluetoothctl connect 90:7A:58:3D:E6:88
@@ -37,9 +42,7 @@ while (( "$#" )); do
   case "$1" in
     -c|--connect)
       turn_on
-      con_sony
-      con_JVC
-      pavucontrol
+      con_q45
       shift
       ;;
     -d|--disconnect)
