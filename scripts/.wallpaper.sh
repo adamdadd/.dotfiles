@@ -1,13 +1,2 @@
-#!/bin/bash
-
-while true; do
-    H=$(date +%k)
-    if (( 8 <= H && H < 17 )); then
-        feh --no-fehbg --bg-fill "/home/adam/wallpapers/solarsystem.png" &> /dev/null
-    else
-        feh --no-fehbg --bg-fill "/home/adam/wallpapers/xbox_cpu.jpg" &> /dev/null
-    fi
-    sleep 2400
-done &
-
-conky &> /dev/null
+#!/bin/sh
+xrandr --output DP-1 --primary --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-2 --off --output DP-3 --mode 1920x1080 --pos 920x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 3440x600 --rotate right

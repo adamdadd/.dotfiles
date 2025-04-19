@@ -1,8 +1,8 @@
 #!/bin/bash
 
 turnon() {
-    ps aux | ag picom | awk '{print $2}' | xargs -L1 kill -9 &> /dev/null
-    ps aux | ag conky | awk '{print $2}' | xargs -L1 kill -9 &> /dev/null
+    # ps aux | ag picom | awk '{print $2}' | xargs -L1 kill -9 &> /dev/null
+    # ps aux | ag conky | awk '{print $2}' | xargs -L1 kill -9 &> /dev/null
     ps aux | ag polybar | awk '{print $2}' | xargs -L1 kill -9 &> /dev/null
     echo "ON" > $HOME/.gamez
 }
@@ -10,8 +10,8 @@ turnon() {
 
 turnoff() {
     exec $HOME/bar.sh &
-    picom -b &> /dev/null
-    conky &> /dev/null
+    # picom -b &> /dev/null
+    # conky &> /dev/null
     echo "OFF" > $HOME/.gamez
 }
 

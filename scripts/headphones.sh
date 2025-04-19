@@ -10,26 +10,15 @@ turn_on() {
     sudo bluetoothctl power on
 }
 
-con_q45() {
-    echo "Attempting connection to sony device..."
-    sudo bluetoothctl connect E8:EE:CC:6E:B4:5A
+con_pixel() {
+    echo "Attempting connection to pixel buds device..."
+    sudo bluetoothctl connect B8:7B:D4:06:A0:F9
 }
 
-con_sony() {
-    echo "Attempting connection to sony device..."
-    sudo bluetoothctl connect 90:7A:58:3D:E6:88
+con_pixel2() {
+    echo "Attempting connection to pixel buds 2 device..."
+    sudo bluetoothctl connect 74:74:46:1D:DA:B3 
 }
-
-dis_sony() {
-    echo "Attempting disconnection to sony device..."
-    sudo bluetoothctl disconnect 90:7A:58:3D:E6:88 &
-}
-
-con_JVC() {
-    echo "Attempting connection to JVC device..."
-    sudo bluetoothctl connect 4C:FE:2E:0B:D2:E5
-}
-
 
 discon() {
     echo "Stopping bluetooth service" &&
@@ -42,7 +31,8 @@ while (( "$#" )); do
   case "$1" in
     -c|--connect)
       turn_on
-      con_q45
+      con_pixel 2> /dev/null
+      con_pixel2
       shift
       ;;
     -d|--disconnect)
